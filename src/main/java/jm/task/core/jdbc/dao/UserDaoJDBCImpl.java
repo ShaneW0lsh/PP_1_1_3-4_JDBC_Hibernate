@@ -38,6 +38,8 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.executeUpdate("""
                 DROP TABLE Users;
             """);
+        } catch (SQLSyntaxErrorException e) {
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
